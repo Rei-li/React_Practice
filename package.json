@@ -1,12 +1,12 @@
 {
-  "name": "react-workshop",
+  "name": "react-practice",
   "version": "1.0.0",
-  "description": "react workshop",
+  "description": "react practice",
   "main": "index.js",
   "scripts": {
-    "start-watch": "webpack --colors --progress --watch",
+    "start": "webpack --colors --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run serve | npm run dev",
+    "start-server": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090"
   },
