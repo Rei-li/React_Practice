@@ -1,0 +1,16 @@
+.list{
+  margin-top: 50px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+.list__row{
+  display: table-row;
+}
+
+.list__header-row{
+  font-weight: bold;
+}
+
+
