@@ -8,8 +8,8 @@ module.exports = {
   },
   output: {
     path: __dirname + '/build',
-    filename: 'bundle.js',
-    publicPath: 'http://localhost:8090/'
+    filename: 'bundle.js'
+    // publicPath: 'http://localhost:8090/'
   },
   devtool: 'source-map',
   module: {
