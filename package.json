@@ -4,6 +4,11 @@
   "description": "react practice",
   "main": "index.js",
   "scripts": {
+    "start": "webpack --colors --progress --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-watch": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090",
     "postinstall": "webpack  --config ./webpack.config.js --progress"
   },
 
