@@ -9,7 +9,7 @@
     "start-server": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
-    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress"
+    "postinstall": "webpack  --config ./webpack.config.js --progress"
   },
 
   "dependencies": {
