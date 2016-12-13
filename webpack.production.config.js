@@ -37,7 +37,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.BannerPlugin("React Workshop"),
+    new webpack.BannerPlugin("React Practice"),
     new webpack.optimize.CommonsChunkPlugin({ 
       name: 'vendor',
       filename: 'vendor.bundle.js'
