@@ -4,7 +4,7 @@
   "description": "react practice",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --port  process.env.PORT",
+    "start": "webpack-dev-server --progress --colors --port $PORT",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-watch": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
