@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute, browserHistory, Link} from 'react-router'
 
 import DepotsList from './components/depotList/depotsList.jsx';
-import Menu from './components/header/header.jsx';
+import Header from './components/header/header.jsx';
 
 import './App.css';
 
@@ -16,12 +16,7 @@ class App extends React.Component {
     render(){
         return( 
             <div>
-                <Menu/>
-            <Router history={browserHistory}>                
-                <Route path='/' component={DepotsList}>                    
-                    <Route path='depots' component={DepotsList} />
-                </Route>
-            </Router>
+                <Header/>
    
             {this.props.children}
         </div>

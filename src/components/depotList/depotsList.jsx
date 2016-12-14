@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import DepotListItem from './depotListItem.jsx';
 import { Grid, Row, Col  } from 'react-bootstrap/lib/';
+import { Link} from 'react-router'
 
 import depotStore from '../../stores/depotStore.js';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner.jsx'
@@ -50,7 +51,7 @@ class DepotsList extends React.Component
     {
         var self = this;
         return(
-            <main className="container">
+            <main className="container">                
                 <h2>Depots</h2>
                 <Grid className="list">
                     <Row className="show-grid row list__row list__header-row">

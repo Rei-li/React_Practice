@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import 'bootstrap-css/index.js'
 
 import App from './App.jsx';
+import AppRouter from './appRouter.jsx';
 
 ReactDOM.render(
-	<App/>,
+	<AppRouter/>,
 	document.getElementById('container')
 );

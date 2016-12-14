@@ -9,7 +9,6 @@ module.exports = {
   output: {
     path: __dirname + '/build',
     filename: 'bundle.js'
-    // publicPath: 'http://localhost:8090/'
   },
   devtool: 'source-map',
   module: {
@@ -60,4 +59,4 @@ module.exports = {
     historyApiFallback: true,
     inline: true
   }
-}
+};
