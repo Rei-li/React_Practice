@@ -13,18 +13,18 @@ const getHeaders = () => {
 };
 
 
-const DepotStore = assign({}, EventEmitter.prototype, {
+const DrugUnitStore = assign({}, EventEmitter.prototype, {
 
     getAll: function() {
-        return fetch(`${ENV.host}/depots`,
+        return fetch(`${ENV.host}/units`,
             { method: 'GET',
                 headers: getHeaders,
                 mode: 'cors'
             })
-             .then(toJson);
+            .then(toJson);
     },
 
-    
+
     emitChange: function() {
         this.emit(CHANGE_EVENT);
     },
@@ -44,4 +44,4 @@ const DepotStore = assign({}, EventEmitter.prototype, {
     }
 });
 
-export default DepotStore;
+export default DrugUnitStore;

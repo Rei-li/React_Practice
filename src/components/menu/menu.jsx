@@ -16,6 +16,9 @@ class Menu extends React.Component {
                 <span className="menu__link">
                      <Link to='/depots'>Depots</Link>
                 </span>
+                <span className="menu__link">
+                     <Link to='/units'>Drug Units</Link>
+                </span>
             </nav>
         )
     }
