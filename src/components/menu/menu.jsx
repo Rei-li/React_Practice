@@ -12,10 +12,7 @@ class Menu extends React.Component {
 
     render(){
         return(
-            <nav>
-                <span className="menu__link">
-                    <a href="/depots">Depots</a>
-                </span>
+            <nav>                
                 <span className="menu__link">
                      <Link to='/depots'>Depots</Link>
                 </span>

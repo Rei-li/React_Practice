@@ -4,7 +4,7 @@
   "description": "react practice",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/http-server build/ ",
+    "start": "./node_modules/.bin/http-server build/ -c-1",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-watch": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server build/ -p 8080 -o -c-1",
