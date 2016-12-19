@@ -4,21 +4,8 @@ import { Grid, Row, Col  } from 'react-bootstrap/lib/';
 
 import drugUnitStore from '../../stores/drugUnitStore.js';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner.jsx'
-
-
-const renderDrugUnit = (drugUnit, key) => (
-    <DrugUnitListItem
-        key={key}
-        drugUnitId={drugUnit.DrugUnitId}
-        pickNumber={drugUnit.PickNumber}
-        drugTypeId={drugUnit.DrugTypeId}
-        drugTypeName={drugUnit.DrugTypeName}
-        depotId={drugUnit.DepotId}
-        depotName={drugUnit.DepotName}
-    />
-);
-
-
+import ListRow from '../list/__row/listRow.jsx'
+import DrugUnitDetails from '../drugUnitDetails/drugUnitDetails.jsx'
 
 class DrugUnitsList extends React.Component
 {
@@ -26,7 +13,9 @@ class DrugUnitsList extends React.Component
         super(props);
         this.state = {
             depotsList: [],
-            depotsLoaded: false
+            depotsLoaded: false,
+            selectedUnit: null,
+            showUnitedit: false
         };
     }
 
@@ -45,6 +34,20 @@ class DrugUnitsList extends React.Component
                 })} )
     }
 
+    // changeUnitHandler(selectedUnit) {
+    //     this.setState({
+    //         selectedUnit: selectedUnit,
+    //         showUnitedit: true
+    //     });
+    // }
+
+    // changeUnitClosedHandler() {
+    //     this.setState({
+    //         selectedUnit: null,
+    //         showUnitedit: false
+    //     });
+    // }
+
 
     render()
     {
@@ -53,17 +56,12 @@ class DrugUnitsList extends React.Component
             <main className="container">
                 <h2>Drug Units</h2>
                 <Grid className="list">
-                    <Row className="show-grid row list__row list__header-row">
-                        <Col xs={2}> Drug Unit Id </Col>
-                        <Col xs={2}> Pick Number </Col>
-                        <Col xs={2}> Drug Type </Col>
-                        <Col xs={2}> Depot Name </Col>
-                        <Col xs={2}> </Col>
-                    </Row>
+                    <ListRow   valuesToShow = {['Drug Unit Id', 'Pick Number', 'Drug Type', 'Depot Name' ]} styleClass="list__header-row"/>
+
                     {(function(listLoaded) {
                         if (listLoaded) {
                             return (
-                                self.state.list.map((x, i) => renderDrugUnit(x, i))
+                                self.state.list.map((x, i) => DrugUnitListItem(x, i))
                             );
                         }
                         else{
@@ -71,6 +69,13 @@ class DrugUnitsList extends React.Component
                         }
                     })(self.state.listLoaded)}
                 </Grid>
+                {(function(ifShown, unitToEdit) {
+                    if (ifShown) {
+                        return (
+                            <DrugUnitDetails drugUnit = {unitToEdit}  />
+                        );
+                    }
+                })(self.state.showUnitedit, self.state.selectedUnit)}
             </main>
         )
     }

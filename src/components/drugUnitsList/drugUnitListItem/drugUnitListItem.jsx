@@ -1,27 +1,17 @@
 import React, { PropTypes } from 'react';
-import { Grid, Row, Col  } from 'react-bootstrap/lib/';
+import { Button  } from 'react-bootstrap/lib/';
+
+import ListRow from '../../list/__row/listRow.jsx'
 
 import '../../list/list.css'
 
-const drugUnitListItem = ({ drugUnitId, pickNumber, drugTypeId, drugTypeName, depotId, depotName }) => (
-
-    <Row className="show-grid row list__row">
-        <Col xs={2} > {drugUnitId} </Col>
-        <Col xs={2} > {pickNumber} </Col>
-        <Col xs={2} > {drugTypeName} </Col>
-        <Col xs={2} > {depotName} </Col>
-        <Col xs={2} >  </Col>
-    </Row>
-
+const drugUnitListItem = (drugUnit, key) => (
+    (function(drugUnit, key) {
+        drugUnit.button = <Button className="btn-primary"> Edit Depot Association </Button>;
+        return (
+            <ListRow key={key}  item = {drugUnit} excludeProps = {['$id', 'DrugTypeId', 'DepotId']} />
+        );
+    })(drugUnit, key)
 );
-
-drugUnitListItem.propTypes = {
-    drugUnitId: PropTypes.number.isRequired,
-    pickNumber: PropTypes.number.isRequired,
-    drugTypeId: PropTypes.number.isRequired,
-    drugTypeName: PropTypes.string.isRequired,
-    depotId: PropTypes.number,
-    depotName: PropTypes.string
-};
 
 export default drugUnitListItem;
