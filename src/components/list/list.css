@@ -7,7 +7,6 @@
 
 .list__row{
   display: table-row;
-  border-bottom: solid darkgrey 1px;
 }
 
 .list__header-row{
